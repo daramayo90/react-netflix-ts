@@ -1,0 +1,81 @@
+.landing-container {
+    font-family: Roboto;
+}
+
+.landing-container .logo {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    width: 100px;
+}
+
+.landing-container > .logo:hover {
+    cursor: pointer;
+}
+
+.landing-container > .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.landing-container > .content > .title {
+    color: #ffff;
+    font-family: inherit;
+    font-size: 68px;
+    user-select: none;
+}
+
+.landing-container > .content > .profiles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.landing-container > .content > .profiles > .profile {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.landing-container > .content > .profiles > .profile:first-child {
+    margin-left: 0px;
+}
+
+.landing-container > .content > .profiles > .profile:last-child {
+    margin-right: 0px;
+}
+
+.landing-container > .content > .profiles > .profile:hover {
+    cursor: pointer;
+}
+
+.landing-container > .content > .profiles > .profile:hover > .username {
+    color: #ffff;
+}
+
+.landing-container > .content > .profiles > .profile:hover > .image {
+    border: 5px solid #ffff;
+}
+
+.landing-container > .content > .profiles > .profile > .image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    border: 5px solid transparent;
+}
+
+.landing-container > .content > .profiles > .profile > .image:first-child {
+    margin-left: 0px;
+}
+
+.landing-container > .content > .profiles > .profile > .username {
+    color: var(--grey-color);
+    text-align: center;
+    font-size: 24px;
+}
