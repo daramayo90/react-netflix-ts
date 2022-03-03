@@ -1,0 +1,68 @@
+.profiles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.profiles-container > .title {
+    color: #ffff;
+    font-family: inherit;
+    font-size: 68px;
+    user-select: none;
+}
+
+.profiles-container > .profiles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profiles-container > .profiles > .profile {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.profiles-container > .profiles > .profile:first-child {
+    margin-left: 0px;
+}
+
+.profiles-container > .profiles > .profile:last-child {
+    margin-right: 0px;
+}
+
+.profiles-container > .profiles > .profile:hover {
+    cursor: pointer;
+}
+
+.profiles-container > .profiles > .profile:hover > .username {
+    color: #ffff;
+}
+
+.profiles-container > .profiles > .profile:hover > .image {
+    border: 5px solid #ffff;
+    border-radius: 10px;
+}
+
+.profiles-container > .profiles > .profile > .image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    border: 5px solid transparent;
+    border-radius: 10px;
+}
+
+.profiles-container > .profiles > .profile > .image:first-child {
+    margin-left: 0px;
+}
+
+.profiles-container > .profiles > .profile > .username {
+    color: var(--grey-color);
+    text-align: center;
+    font-size: 24px;
+}

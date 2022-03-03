@@ -1,0 +1,44 @@
+.navbar-container {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container .logo {
+    width: 100px;
+    margin-right: 40px;
+}
+
+.navbar-container > .logo:hover {
+    cursor: pointer;
+}
+
+.navbar-container > .button-tertiary {
+    background: none;
+    color: rgb(230, 230, 230);
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0px;
+    margin: 5px 10px;
+    transition: color 100ms linear;
+}
+
+.navbar-container > .button-tertiary:hover {
+    color: rgb(150, 150, 150);
+    cursor: pointer;
+}
+
+.navbar-container > .button-tertiary-active {
+    font-weight: 500;
+    color: #ffff;
+}
+
+.navbar-container > .button-tertiary-active:hover {
+    color: #ffff;
+    cursor: unset;
+}

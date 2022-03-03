@@ -11,7 +11,7 @@ interface Props {
 
 function Profiles ({onProfileClick}: Props) {
     return (
-        <div className="content">
+        <div className="profiles-container">
         <span className="title">Who's watching?</span>
         <div className="profiles">
 

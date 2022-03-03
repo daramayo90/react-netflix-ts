@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import "./Landing.css";
 
 import { Profile as ProfileModel } from "../../models/profile/Profile";
+import Navbar from '../../components/navbar/Navbar'
 import Profiles from '../profiles/Profiles'
 import Browse from '../browse/Browse'
 
@@ -15,7 +16,7 @@ function Landing () {
 
   return (
     <div className="landing-container">
-      <img className="logo" src="assets/images/netflix.svg" />
+      <Navbar />
       {user === undefined ? <Profiles onProfileClick={onProfileClick} /> : <Browse />}
     </div>
   );
