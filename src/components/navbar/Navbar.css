@@ -2,6 +2,7 @@
     position: absolute;
     left: 40px;
     top: 20px;
+    right: 40px;
     display: flex;
     align-items: center;
 }
@@ -41,4 +42,14 @@
 .navbar-container > .button-tertiary-active:hover {
     color: #ffff;
     cursor: unset;
+}
+
+.navbar-container > svg {
+    color: #ffff;
+    margin: 0px 10px;
+}
+
+.navbar-container > .profile-image {
+    width: 48px;
+    height: 48px;
 }
