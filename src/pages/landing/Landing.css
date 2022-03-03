@@ -61,6 +61,7 @@
 
 .landing-container > .content > .profiles > .profile:hover > .image {
     border: 5px solid #ffff;
+    border-radius: 10px;
 }
 
 .landing-container > .content > .profiles > .profile > .image {
@@ -68,6 +69,7 @@
     height: 200px;
     margin-bottom: 15px;
     border: 5px solid transparent;
+    border-radius: 10px;
 }
 
 .landing-container > .content > .profiles > .profile > .image:first-child {

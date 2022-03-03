@@ -1,18 +1,18 @@
 [
     {
         "image_src": "assets/images/profile_1.png",
-        "username": "cat"
+        "username": "Profile 1"
     },
     {
         "image_src": "assets/images/profile_2.png",
-        "username": "person"
+        "username": "Profile 2"
     },
     {
         "image_src": "assets/images/profile_3.png",
-        "username": "bird"
+        "username": "Profile 3"
     },
     {
         "image_src": "assets/images/profile_4.png",
-        "username": "dog"
+        "username": "Profile 4"
     }
 ]
