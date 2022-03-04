@@ -1,10 +1,13 @@
 .navbar-container {
     position: absolute;
-    left: 40px;
-    top: 20px;
-    right: 40px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    padding: 20px 40px;
+    padding-bottom: 0px;
     display: flex;
     align-items: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
 }
 
 .navbar-container .logo {
@@ -50,6 +53,6 @@
 }
 
 .navbar-container > .profile-image {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
 }
