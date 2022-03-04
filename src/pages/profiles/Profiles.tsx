@@ -23,7 +23,7 @@ function Profiles ({onProfileClick}: Props) {
           ))}
 
         </div>
-        <Button label="MANAGE PROFILES" />
+        <Button ghost secondary label="MANAGE PROFILES" />
       </div>
     )
 }

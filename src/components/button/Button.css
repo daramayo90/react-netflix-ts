@@ -1,10 +1,45 @@
-.button-container {
+.primary-button {
+    background-color: #ffff;    
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: background 200ms linear;
+}
+
+.primary-button:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.secondary-ghost-button {
     font-size: 24px;
     color: var(--grey-color);
     background: none;
     border: 1px solid var(--grey-color);
     padding: 10px 40px;
     letter-spacing: 2px;
+}
+
+.secondary-ghost-button:hover {
+    border: 1px solid #ffff;
+    color: #ffff;
+}
+
+.secondary-button {
+    color: #ffff;
+    background: rgba(120, 120, 120, 0.4);
+    border-radius: 3px;
+    padding: 10px 40px;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: background 200ms linear;
+}
+
+.secondary-button:hover {
+    background: rgba(50, 50, 50, 0.4);
 }
 
 .button-container:hover {
