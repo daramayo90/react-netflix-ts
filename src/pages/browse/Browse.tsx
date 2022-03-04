@@ -3,6 +3,7 @@ import "./Browse.css";
 
 import Button from "../../components/button/Button";
 import MovieList from "../../components/movieList/MovieList"
+import List from "../../components/list/List"
 
 function Browse() {
   return (
@@ -23,7 +24,11 @@ function Browse() {
         </div>
       </div>
 
-      <MovieList />
+      <List />
+      <List />
+      <List />
+      <List />
+      <List />
     </div>
   );
 }
