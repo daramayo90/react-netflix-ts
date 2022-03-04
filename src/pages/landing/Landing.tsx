@@ -4,7 +4,7 @@ import "./Landing.css";
 
 import { Profile as ProfileModel } from "../../models/profile/Profile";
 import Navbar from '../../components/navbar/Navbar'
-import Profiles from '../profiles/Profiles'
+import Profiles from '../../components/profiles/Profiles'
 import Browse from '../browse/Browse'
 
 function Landing () {

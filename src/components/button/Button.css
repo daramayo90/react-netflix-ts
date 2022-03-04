@@ -1,8 +1,10 @@
 .primary-button {
-    background-color: #ffff;    
+    background-color: #ffff;
     border: none;
+    min-width: 190px;
     border-radius: 3px;
-    padding: 10px 40px;
+    margin-right: 15px;
+    padding: 5px 40px;
     font-size: 24px;
     font-weight: 500;
     font-family: inherit;
@@ -30,8 +32,9 @@
 .secondary-button {
     color: #ffff;
     background: rgba(120, 120, 120, 0.4);
+    min-width: 210px;
     border-radius: 3px;
-    padding: 10px 40px;
+    padding: 5px 40px;
     font-size: 24px;
     font-weight: 500;
     font-family: inherit;
@@ -40,10 +43,4 @@
 
 .secondary-button:hover {
     background: rgba(50, 50, 50, 0.4);
-}
-
-.button-container:hover {
-    border: 1px solid #ffff;
-    color: #ffff;
-    cursor: pointer;
 }
