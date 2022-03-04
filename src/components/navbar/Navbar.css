@@ -4,10 +4,10 @@
     top: 0px;
     right: 0px;
     padding: 20px 40px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, transparent);
 }
 
 .navbar-container .logo {
