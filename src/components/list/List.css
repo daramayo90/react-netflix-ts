@@ -1,20 +1,29 @@
-.list {
+.lists {
+    position: relative;
+}
+
+.lists > .lists-container {
+    position: absolute;
+    top: 0;
+}
+
+.lists > .lists-container > .list {
     width: 100%;
     margin-top: 10px;
 }
 
-.list > .listTitle {
+.lists > .lists-container > .list > .listTitle {
     color: white;
     font-size: 20px;
     font-weight: 500;
     margin-left: 50px;
 }
 
-.list > .wrapper {
+.lists > .lists-container > .list > .wrapper {
     position: relative;
 }
 
-.list > .wrapper > .sliderArrow {
+.lists > .lists-container > .list > .wrapper > .sliderArrow {
     width: 50px;
     height: 100%;
     background-color: rgb(22, 22, 22, 0.5);
@@ -27,15 +36,15 @@
     cursor: pointer;
 }
 
-.list > .wrapper > .left {
+.lists > .lists-container > .list > .wrapper > .left {
     left: 0;    
 }
 
-.list > .wrapper > .right {
+.lists > .lists-container > .list > .wrapper > .right {
     right: 0;
 }
 
-.list > .wrapper > .container {
+.lists > .lists-container > .list > .wrapper > .container {
     margin-left: 50px;
     display: flex;
     margin-top: 10px;
