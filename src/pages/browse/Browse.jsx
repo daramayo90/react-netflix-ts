@@ -42,6 +42,7 @@ function Browse() {
           <List />
         </div>
   </section>*/}
+  
       <Row title="TRENDING" fetchUrl={requests.fetchTrending} />
       <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} />
       <Row title="TOP RATED" fetchUrl={requests.fetchTopRated} />

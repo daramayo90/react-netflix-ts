@@ -1,3 +1,13 @@
+.lists {
+    position: relative;
+}
+
+.lists > .lists-container {
+    position: absolute;
+    top: -20rem;
+    background: linear-gradient(to bottom, transparent, rgb(0, 0, 0) 90%);
+}
+
 .row {
     color: #ffff;
     margin-left: 80px;
@@ -14,12 +24,13 @@
 }
 
 .poster {
-    max-height: 12rem;
     object-fit: contain;
+    max-height: 12rem;
+    border-radius: 5px;
     margin-right: 10px;
-    transition: transform 450ms ease-in-out;
+    transition: transform 450ms;
 }
 
 .poster:hover {
-    transform: scale(1,1);
+    transform: scale(2);
 }
