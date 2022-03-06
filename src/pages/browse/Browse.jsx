@@ -4,6 +4,8 @@ import "./Browse.css";
 import Button from "../../components/button/Button";
 import MovieList from "../../components/movieList/MovieList";
 import List from "../../components/list/List";
+import Row from "../../components/row/Row";
+import requests from "../../Requests";
 
 function Browse() {
   return (
@@ -31,7 +33,7 @@ function Browse() {
           </div>
         </div>
       </section>
-      <section className="lists">
+      {/*<section className="lists">
         <div className="lists-container">
           <List />
           <List />
@@ -39,7 +41,13 @@ function Browse() {
           <List />
           <List />
         </div>
-      </section>
+  </section>*/}
+      <Row title="TRENDING" fetchUrl={requests.fetchTrending} />
+      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} />
+      <Row title="TOP RATED" fetchUrl={requests.fetchTopRated} />
+      <Row title="ACTION MOVIES" fetchUrl={requests.fetchActionMovies} />
+      <Row title="COMEDY MOVIES" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="DOCUMENTARIES" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
 }
