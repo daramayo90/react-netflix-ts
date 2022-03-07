@@ -10,13 +10,20 @@
 
 .row {
     color: #ffff;
-    margin-left: 80px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.row > h4 {
+    font-family: inherit;
+    font-size: 21px;
 }
 
 .posters {
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
+    margin-top: 10px;
 }
 
 .posters::-webkit-scrollbar {
@@ -25,7 +32,7 @@
 
 .poster {
     object-fit: contain;
-    max-height: 12rem;
+    max-height: 6rem;
     border-radius: 5px;
     margin-right: 10px;
     transition: transform 450ms;
@@ -33,4 +40,54 @@
 
 .poster:hover {
     transform: scale(2);
+}
+
+/* Tables */
+@media (min-width: 769px) and (orientation: landscape) {
+    .lists {
+        position: relative;
+    }
+    
+    .lists > .lists-container {
+        position: absolute;
+        top: -20rem;
+        background: linear-gradient(to bottom, transparent, rgb(0, 0, 0) 90%);
+    }
+
+    .row > h4 {
+        font-family: inherit;
+        font-size: 45px;
+    }
+    
+    .posters {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+    
+    .posters::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .poster {
+        object-fit: contain;
+        max-height: 12rem;
+        border-radius: 5px;
+        margin-right: 10px;
+        transition: transform 450ms;
+    }
+    
+    .poster:hover {
+        transform: scale(2);
+    }
+}
+
+
+/* Laptops */
+@media (min-width: 769px) {
+    
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
 }

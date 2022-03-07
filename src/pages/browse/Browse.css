@@ -1,9 +1,9 @@
+.browse-container {
+    width: 100%;
+}
+
 .browse-container > .thumbnail-section {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    width: 100%;
 }
 
 .browse-container > .thumbnail-section > .thumbnail {
@@ -17,25 +17,73 @@
 
 .browse-container > .thumbnail-section > .description-section {
     position: absolute;
-    left: 80px;
-    bottom: 35%;
+    bottom: 0;
+    text-align: center;
     width: 100%;
-    max-width: 30%;
 }
 
 .browse-container > .thumbnail-section > .description-section > img {
-    width: 95%;
+    width: 50%;
     object-fit: cover;
 }
 
 .browse-container > .thumbnail-section > .description-section > .description {
-    display: inline-block;
-    color: #fff;
-    font-weight: 400;
-    line-height: normal;
-    width: 100%;
-    font-size: 1.4vw;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-    margin-top: 0.9vw;
-    margin-bottom: 1.5vw;
+    display: none;
 }
+
+
+/* Tables */
+@media (min-width: 769px) and (orientation: landscape) {
+    .browse-container > .thumbnail-section {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 100%;
+    }
+    
+    .browse-container > .thumbnail-section > .thumbnail {
+        width: 100%;
+    }
+    
+    .browse-container > .thumbnail-section > .thumbnail > img {
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .browse-container > .thumbnail-section > .description-section {
+        position: absolute;
+        left: 80px;
+        bottom: 25%;
+        width: 100%;
+        max-width: 30%;
+    }
+    
+    .browse-container > .thumbnail-section > .description-section > img {
+        width: 95%;
+    }
+    
+    .browse-container > .thumbnail-section > .description-section > .description {
+        display: inline-block;
+        color: #fff;
+        font-weight: 400;
+        line-height: normal;
+        width: 100%;
+        font-size: 1.4vw;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+        margin-top: 0.9vw;
+        margin-bottom: 1.5vw;
+    }
+}
+
+
+/* Laptops */
+@media (min-width: 769px) {
+    
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+}
+
+

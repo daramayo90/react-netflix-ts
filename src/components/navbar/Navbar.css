@@ -1,99 +1,152 @@
-.navbar, .scrolled {
-    z-index: 999;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 10%, transparent);
-    transition: background-color 0.65s ease-in-out;
-}
-
-.scrolled {
-    background-color: #0b0b0b;
-}
-
 .navbar-container {
-    padding: 20px 40px;
-    padding-bottom: 10px;
     display: flex;
     align-items: center;
 }
 
 .navbar-container > .logo {
-    width: 100px;
-    margin-right: 40px;
+    width: 70px;
+    margin: 10px;
 }
 
-.navbar-container > .logo:hover {
-    cursor: pointer;
+.navbar {
+    width: 100%;
+    background: transparent;
+    padding: 5px 10px;
 }
 
-.navbar-container > .button-tertiary {
-    background: none;
-    color: rgb(230, 230, 230);
-    border: none;
-    outline: none;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 0px;
-    margin: 5px 10px;
-    transition: color 100ms linear;
+.navbar > .navbar-container {
+    display: flex;
+    align-items: center;
 }
 
-.navbar-container > .button-tertiary:hover {
-    color: rgb(150, 150, 150);
-    cursor: pointer;
-}
-
-.navbar-container > .button-tertiary-active {
-    font-weight: 500;
-    color: #ffff;
-}
-
-.navbar-container > .button-tertiary-active:hover {
-    color: #ffff;
-    cursor: unset;
-}
-
-.navbar-container > svg {
-    color: #ffff;
-    margin: 0px 10px;
+.navbar > .navbar-container > .logo {
+    width: 70px;
 }
 
 .navbar-container > .profile-image {
-    width: 32px;
-    height: 32px;
+    width: 27px;
+    height: 27px;
 }
 
-.profile {
-    position: relative;
-}
-
-.profile > .icon {
-    margin: 0px 15px;
-    cursor: pointer;
-    color: #ffff;
-    font-size: 32px;
-}
-
-.profile > .options {
+.navbar-container > .button-tertiary,
+.navbar-container > .icon,
+.navbar-container > .profile {
     display: none;
 }
 
-.profile > .options > span {
-    color: #ffff;
-    font-size: 14px;
-    padding: 10px;
-    cursor: pointer;
+/* Tables */
+@media (min-width: 769px) and (orientation: landscape) {
+    .navbar, .scrolled {
+        z-index: 999;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 10%, transparent);
+        transition: background-color 0.65s ease-in-out;
+    }
+    .scrolled {
+        background-color: #0b0b0b;
+    }
+    
+    .navbar-container {
+        padding: 20px 40px;
+        padding-bottom: 10px;
+    }
+    
+    .navbar-container > .logo {
+        width: 100px;
+        margin-right: 40px;
+    }
+    
+    .navbar-container > .logo:hover {
+        cursor: pointer;
+    }
+    
+    .navbar-container > .button-tertiary {
+        display: block;
+        background: none;
+        color: rgb(230, 230, 230);
+        border: none;
+        outline: none;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 0px;
+        margin: 5px 10px;
+        transition: color 100ms linear;
+    }
+    
+    .navbar-container > .button-tertiary:hover {
+        color: rgb(150, 150, 150);
+        cursor: pointer;
+    }
+    
+    .navbar-container > .button-tertiary-active {
+        font-weight: 500;
+        color: #ffff;
+    }
+    
+    .navbar-container > .button-tertiary-active:hover {
+        color: #ffff;
+        cursor: unset;
+    }
+    
+    .navbar-container > svg {
+        color: #ffff;
+        margin: 0px 10px;
+    }
+    
+    .navbar-container > .profile-image {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .navbar-container > .profile {
+        display: block;
+        position: relative;
+    }
+
+    .navbar-container > .icon {
+        display: block;
+    }
+    
+    .navbar-container > .profile > .icon {
+        margin: 0px 15px;
+        cursor: pointer;
+        color: #ffff;
+        font-size: 32px;
+    }
+    
+    .navbar-container > .profile > .options {
+        display: none;
+    }
+    
+    .navbar-container > .profile > .options > span {
+        color: #ffff;
+        font-size: 14px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .navbar-container > .profile:hover > .options  {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 36px;
+        right: 15px;
+        background-color: #0b0b0b;
+        border-radius: 5px;
+        padding: 10px 5px;
+    }
 }
 
-.profile:hover > .options  {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 36px;
-    right: 15px;
-    background-color: #0b0b0b;
-    border-radius: 5px;
-    padding: 10px 5px;
+
+/* Laptops */
+@media (min-width: 769px) {
+
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    
 }

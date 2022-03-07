@@ -41,9 +41,9 @@ function Navbar({ only_logo, profile_url }: Props) {
 
           <div className="spacer"></div>
 
-          <SearchIcon />
-          <CardGiftIcon />
-          <NotificationsIcon />
+          <SearchIcon className="icon"/>
+          <CardGiftIcon className="icon"/>
+          <NotificationsIcon className="icon"/>
           {profile_url && <img className="profile-image" src={profile_url} />}
           <div className="profile">
             <ArrowDropDownIcon className="icon" />

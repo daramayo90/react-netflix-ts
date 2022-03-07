@@ -1,44 +1,83 @@
 .primary-button {
     background-color: #ffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 3px;
     margin-right: 15px;
-    padding: 0.5vh 3vw;
-    font-size: 1.2vw;
+    padding: 2px 20px;
+    font-size: 18px;
     font-weight: 500;
     font-family: inherit;
     transition: background 200ms linear;
-}
-
-.primary-button:hover {
-    background-color: rgb(200, 200, 200);
-}
-
-.secondary-ghost-button {
-    font-size: 24px;
-    color: var(--grey-color);
-    background: none;
-    border: 1px solid var(--grey-color);
-    padding: 10px 40px;
-    letter-spacing: 2px;
-}
-
-.secondary-ghost-button:hover {
-    border: 1px solid #ffff;
-    color: #ffff;
 }
 
 .secondary-button {
     color: #ffff;
     background: rgba(120, 120, 120, 0.4);
-    border-radius: 4px;
-    padding: 0.5vh 3.5vw;
-    font-size: 1.2vw;
+    border-radius: 3px;
+    padding: 2px 20px;
+    font-size: 18px;
     font-weight: 500;
     font-family: inherit;
-    transition: background 200ms linear;
 }
 
-.secondary-button:hover {
-    background: rgba(50, 50, 50, 0.4);
+.secondary-ghost-button {
+    font-size: 18px;
+    color: var(--grey-color);
+    background: none;
+    border: 1px solid var(--grey-color);
+    padding: 8px 30px;
+    letter-spacing: 2px;
 }
+
+
+/* Tables */
+@media (min-width: 769px) and (orientation: landscape) {
+    .secondary-button, .secondary-ghost-button {
+        font-size: 18px;
+    }
+}
+
+
+/* Laptops */
+@media (min-width: 769px) {
+
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .primary-button {
+        background-color: #ffff;
+        border: none;
+        border-radius: 4px;
+        margin-right: 15px;
+        padding: 2px 20px;
+        font-size: 18px;
+        font-weight: 500;
+        font-family: inherit;
+        transition: background 200ms linear;
+    }
+    
+    .primary-button:hover {
+        background-color: rgb(200, 200, 200);
+    }
+    
+    .secondary-ghost-button {
+        padding: 10px 40px;
+        letter-spacing: 2px;
+    }
+    
+    .secondary-ghost-button:hover {
+        border: 1px solid #ffff;
+        color: #ffff;
+    }
+    
+    .secondary-button {
+        transition: background 200ms linear;
+    }
+    
+    .secondary-button:hover {
+        background: rgba(50, 50, 50, 0.4);
+    }
+}
+
+
