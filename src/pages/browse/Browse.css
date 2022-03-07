@@ -6,24 +6,28 @@
     position: relative;
 }
 
-.browse-container > .thumbnail-section > .thumbnail {
+.browse-container > .thumbnail-section > .thumbnail-desktop {
+    display: none;
+}
+
+.browse-container > .thumbnail-section > .thumbnail-mobile {
     width: 100%;
 }
 
-.browse-container > .thumbnail-section > .thumbnail > img {
+.browse-container > .thumbnail-section > .thumbnail-mobile > img {
     width: 100%;
     object-fit: cover;
 }
 
 .browse-container > .thumbnail-section > .description-section {
     position: absolute;
-    bottom: 0;
+    bottom: 9vh;
     text-align: center;
     width: 100%;
 }
 
 .browse-container > .thumbnail-section > .description-section > img {
-    width: 50%;
+    width: 85%;
     object-fit: cover;
 }
 
@@ -31,9 +35,48 @@
     display: none;
 }
 
+.browse-container > .thumbnail-section > .fadeBottom {
+    position: absolute;
+    top: 30vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.342), #111);
+}
+
+/* Large cellphones */
+@media (min-width: 480px) {
+    .browse-container > .thumbnail-section > .fadeBottom {
+        top: 40vh;
+    }
+}
+
+/* Large cellphones 2 */
+@media (min-width: 480px) {
+    .browse-container > .thumbnail-section > .fadeBottom {
+        top: 50vh;
+    }
+}
+
 
 /* Tables */
 @media (min-width: 769px) and (orientation: landscape) {
+    .browse-container > .thumbnail-section > .description-section > .actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .browse-container > .thumbnail-section > .fadeBottom {
+        top: 80vh;
+    }
+
+}
+
+
+/* Laptops */
+@media (min-width: 680px) {
     .browse-container > .thumbnail-section {
         position: relative;
         display: flex;
@@ -41,16 +84,21 @@
         margin: auto;
         width: 100%;
     }
+
+    .browse-container > .thumbnail-section > .thumbnail-mobile {
+        display: none;
+    }
     
-    .browse-container > .thumbnail-section > .thumbnail {
+    .browse-container > .thumbnail-section > .thumbnail-desktop {
+        display: block;
         width: 100%;
     }
     
-    .browse-container > .thumbnail-section > .thumbnail > img {
+    .browse-container > .thumbnail-section > .thumbnail-desktop > img {
         width: 100%;
         object-fit: cover;
     }
-    
+
     .browse-container > .thumbnail-section > .description-section {
         position: absolute;
         left: 80px;
@@ -74,16 +122,36 @@
         margin-top: 0.9vw;
         margin-bottom: 1.5vw;
     }
-}
 
+    .browse-container > .thumbnail-section > .description-section > .actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-/* Laptops */
-@media (min-width: 769px) {
-    
+    .browse-container > .thumbnail-section > .fadeBottom {
+        top: 33vh
+    }
 }
 
 /* Desktop */
 @media (min-width: 1200px) {
+    .browse-container > .thumbnail-section > .fadeBottom {
+        top: 45vh
+    }
 }
 
+/* Large monitors */
+@media (min-width: 1500px) {
+    .browse-container > .thumbnail-section > .fadeBottom {
+        top: 55vh
+    }
+}
+
+/* TVs */
+@media (min-width: 1900px) {
+    .browse-container > .thumbnail-section > .fadeBottom {
+        top: 70vh
+    }
+}
 

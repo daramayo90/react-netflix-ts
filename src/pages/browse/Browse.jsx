@@ -11,7 +11,13 @@ function Browse() {
   return (
     <div className="browse-container">
       <section className="thumbnail-section">
-        <div className="thumbnail">
+        <div className="thumbnail-mobile">
+          <img
+            src="https://w0.peakpx.com/wallpaper/392/737/HD-wallpaper-spider-man-no-way-home-poster.jpg"
+            alt=""
+          />
+        </div>
+        <div className="thumbnail-desktop">
           <img
             src="https://wallpaperboat.com/wp-content/uploads/2021/12/19/79926/spider-man-no-way-home-12.jpg"
             alt=""
@@ -32,6 +38,7 @@ function Browse() {
             <Button secondary label="More info" />
           </div>
         </div>
+        <div className="fadeBottom"></div>
       </section>
       {/*<section className="lists">
         <div className="lists-container">

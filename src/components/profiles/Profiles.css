@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 120vh;
+    margin-top: 120px;
 }
 
 .profiles-container > .title {

@@ -1,5 +1,6 @@
 import React from "react";
 import './Button.css';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 interface Props {
     primary?: boolean;
@@ -24,7 +25,8 @@ function Button ({ label, primary, secondary, tertiary, ghost }: Props) {
         if (ghost) {
             return <button className="primary-button primary-ghost-button">{label}</button>
         } else {
-            return <button className="primary-button">{label}</button>
+            return <button className="primary-button">
+                <PlayArrowIcon className="play"/>{label}</button>
         }   
     }
 }
