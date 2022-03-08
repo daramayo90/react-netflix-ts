@@ -12,7 +12,8 @@
 .posters {
     display: flex;
     overflow-x: scroll;
-    margin-top: 10px;    
+    margin-top: 10px;
+    
 }
 
 .posters::-webkit-scrollbar {
@@ -44,8 +45,15 @@
 
 /* Laptops */
 @media (min-width: 769px) {
+    .row {
+        overflow: visible;
+    }
     .posters::-webkit-scrollbar {
         display: none;
+    }
+
+    .posters {
+        overflow: visible;
     }
 
     .poster {
@@ -57,6 +65,7 @@
     }
 
     .poster:hover {
+        position: relative;
         transform: scale(2);
     }
 }

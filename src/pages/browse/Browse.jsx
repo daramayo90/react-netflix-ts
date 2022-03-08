@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./Browse.css";
+
 
 import Button from "../../components/button/Button";
 import MovieList from "../../components/movieList/MovieList";
@@ -8,6 +9,7 @@ import Row from "../../components/row/Row";
 import requests from "../../Requests";
 
 function Browse() {
+
   return (
     <div className="browse-container">
       <section className="thumbnail-section">
@@ -40,21 +42,15 @@ function Browse() {
         </div>
         <div className="fadeBottom"></div>
       </section>
-      {/*<section className="lists">
-        <div className="lists-container">
-          <List />
-          <List />
-          <List />
-          <List />
-          <List />
-        </div>
-  </section>*/}
-      <Row title="TRENDING" fetchUrl={requests.fetchTrending} />
-      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} />
-      <Row title="TOP RATED" fetchUrl={requests.fetchTopRated} />
-      <Row title="ACTION MOVIES" fetchUrl={requests.fetchActionMovies} />
-      <Row title="COMEDY MOVIES" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="DOCUMENTARIES" fetchUrl={requests.fetchDocumentaries} />
+
+      <div className="list">
+        <Row title="TRENDING" fetchUrl={requests.fetchTrending} />
+        <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} />
+        <Row title="TOP RATED" fetchUrl={requests.fetchTopRated} />
+        <Row title="ACTION MOVIES" fetchUrl={requests.fetchActionMovies} />
+        <Row title="COMEDY MOVIES" fetchUrl={requests.fetchComedyMovies} />
+        <Row title="DOCUMENTARIES" fetchUrl={requests.fetchDocumentaries} />
+      </div>
     </div>
   );
 }

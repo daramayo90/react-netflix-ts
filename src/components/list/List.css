@@ -1,54 +1,50 @@
-.lists {
-    position: relative;
-}
-
-.lists > .lists-container {
-    position: absolute;
-    top: 0;
-}
-
-.lists > .lists-container > .list {
-    width: 100%;
-    margin-top: 10px;
-}
-
-.lists > .lists-container > .list > .listTitle {
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    margin-left: 50px;
-}
-
-.lists > .lists-container > .list > .wrapper {
-    position: relative;
-}
-
-.lists > .lists-container > .list > .wrapper > .sliderArrow {
-    width: 50px;
-    height: 100%;
-    background-color: rgb(22, 22, 22, 0.5);
-    color: white;
-    position: absolute;
-    z-index: 99;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    cursor: pointer;
-}
-
-.lists > .lists-container > .list > .wrapper > .left {
-    left: 0;    
-}
-
-.lists > .lists-container > .list > .wrapper > .right {
-    right: 0;
-}
-
-.lists > .lists-container > .list > .wrapper > .container {
-    margin-left: 50px;
+.container {
     display: flex;
-    margin-top: 10px;
-    width: max-content;
-    transform: translateX(0px);
-    transition: all 1s ease;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: max-content;
+  transform: translateX(0px);
+  transition: all 1s ease;
 }
+
+
+/* Laptops */
+@media (min-width: 680px) {
+
+    .list {
+      width: 100%;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    
+    .wrapper {
+      position: relative;
+      overflow: visible;
+    }
+    
+    .sliderArrow {
+      width: 50px;
+      height: 100%;
+      background-color: rgb(22, 22, 22, 0.5);
+      color: white;
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: pointer;
+    }
+    
+    .left {
+      left: 0;
+    }
+    
+    .right {
+      right: 0;
+    }
+    
+
+}
+
+
+

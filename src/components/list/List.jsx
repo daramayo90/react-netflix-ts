@@ -1,12 +1,10 @@
-import { useRef, useState } from "react";
-import "./List.css";
-
 import {
   ArrowBackIosOutlined,
   ArrowForwardIosOutlined,
 } from "@material-ui/icons";
-
+import { useRef, useState } from "react";
 import ListItem from "../listItem/ListItem";
+import "./List.css";
 
 export default function List() {
   const [isMoved, setIsMoved] = useState(false);
@@ -26,7 +24,6 @@ export default function List() {
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
   };
-
   return (
     <div className="list">
       <span className="listTitle">Continue to watch</span>
