@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
 
 const controller = {
     /* POST: User to register */
@@ -9,7 +10,7 @@ const controller = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10)
         });
-    
+
         try {
             const user = await newUser.save();
             res.status(201).json(user);
@@ -22,17 +23,25 @@ const controller = {
     login: async function (req, res) {
         try {
             const user = await User.findOne({ email: req.body.email });
-    
+
             !user && res.status(401).json("Wrong password or username");
-    
+
             let checkPassword = bcrypt.compareSync(req.body.password, user.password);
-    
+
+            //Check password and remove the field before send the JSON information
             if (checkPassword) {
-                res.status(200).json(user);
+                const accessToken = jwt.sign({
+                    id: user.id, isAdmin: user.isAdmin },
+                    user.password,
+                    { expiresIn: "5d" });
+
+                const { password, ...info } = user._doc;
+
+                res.status(200).json({...info, accessToken});
             } else {
                 res.status(401).json("Wrong password or username");
             }
-    
+
         } catch (err) {
             res.status(500).json(err);
         }
