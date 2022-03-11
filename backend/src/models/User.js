@@ -10,4 +10,4 @@ const UserModel = new mongoose.Schema({
     { typestamps: true }
 );
 
-module.export = mongoose.model("User", UserModel);
+module.exports = mongoose.model("User", UserModel);
