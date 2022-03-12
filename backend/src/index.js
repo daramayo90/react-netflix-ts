@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 
 const authRoute = require('./routes/auth.routes');
+const userRoute = require('./routes/users.routes');
 
 main().catch(err => console.log(err));
 
@@ -14,6 +15,7 @@ async function main() {
 app.use(express.json());
 
 app.use('/api/auth', authRoute);
+app.use('/api/users', userRoute);
 
 app.listen(8800, () => {
     console.log("Backend server is running");

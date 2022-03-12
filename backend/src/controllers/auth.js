@@ -1,6 +1,8 @@
 const User = require('../models/User');
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
+
 
 const controller = {
     /* POST: User to register */
@@ -27,14 +29,14 @@ const controller = {
             !user && res.status(401).json("Wrong password or username");
 
             let checkPassword = bcrypt.compareSync(req.body.password, user.password);
-
+            
             //Check password and remove the field before send the JSON information
             if (checkPassword) {
                 const accessToken = jwt.sign({
                     id: user.id, isAdmin: user.isAdmin },
-                    user.password,
+                    process.env.SECRET_KEY,
                     { expiresIn: "5d" });
-
+                    
                 const { password, ...info } = user._doc;
 
                 res.status(200).json({...info, accessToken});
