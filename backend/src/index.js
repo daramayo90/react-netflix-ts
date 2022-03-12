@@ -1,22 +1,6 @@
-const mongoose = require('mongoose');
-const express = require("express");
-const app = express();
+const app = require('./app');
+const port = process.env.PORT || 8800;
 
-const authRoute = require('./routes/auth.routes');
-const userRoute = require('./routes/users.routes');
-
-main().catch(err => console.log(err));
-
-async function main() {
-    await mongoose.connect('mongodb+srv://daramayo90:react-netflix-ts@cluster0.oaf7u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
-    console.log("DB Connection Ok");
-}
-
-app.use(express.json());
-
-app.use('/api/auth', authRoute);
-app.use('/api/users', userRoute);
-
-app.listen(8800, () => {
-    console.log("Backend server is running");
+app.listen(port, () => {
+    console.log(`Backend server is running on port ${port}`);
 });

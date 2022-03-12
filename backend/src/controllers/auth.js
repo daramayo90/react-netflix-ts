@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-
 const controller = {
     /* POST: User to register */
     register: async function (req, res) {
