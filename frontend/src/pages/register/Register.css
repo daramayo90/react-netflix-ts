@@ -1,0 +1,247 @@
+.register {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 120%), url("../../../public/assets/images/landing.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.register > .top > .wrapper {
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.register > .top > .wrapper > .logo {
+    height: 24px;
+}
+
+.register > .top > .wrapper > .signInButton {
+    background-color: red;
+    border: none;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.register > .container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+}
+
+.register > .container > .wrapper-text {
+    margin-top: -250px;
+    width: 75%;
+}
+
+.register > .container > .wrapper-text > h1 {
+    font-size: 28px;
+}
+
+.register > .container > .wrapper-text > p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.register > .container > .input {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.register > .container > .input > input {
+    width: 95%;
+    border: lightgray;
+    border-radius: 2px;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+}
+
+.register > .container > .input > input::placeholder {
+    color: #8c8c8c;
+    font-size: 14px;
+}
+
+.register > .container > .input > .registerButton {
+    background-color: #e50914;
+    border: none;
+    border-radius: 2px;
+    color: #ffff;
+    font-size: 19px;
+    cursor: pointer;
+    padding: 8px 18px;
+}
+
+.register > .container > .input > .registerButton > .icon {
+    font-size: 13px;
+}
+
+
+/* Tables */
+@media (min-width: 769px) and (orientation: landscape) {
+    .register > .top > .wrapper {
+        padding: 25px 60px;
+    }
+    
+    .register > .top > .wrapper > .logo {
+        height: 3em;
+    }
+    
+    .register > .container > .wrapper-text {
+        margin-top: 100px;
+        width: 65%;
+    }
+    
+    .register > .container > .wrapper-text > h1 {
+        font-size: 45px;
+        width: 80%;
+        margin: auto;
+    }
+    
+    .register > .container > .wrapper-text > p {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 15px 0;
+    }
+    
+    .register > .container > .input {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+    }
+    
+    .register > .container > .input > input {
+        flex: 8;
+        width: 80%;
+        padding: 20px 10px;
+        margin-bottom: 0px;
+    }
+
+    .register > .container > .input > .registerButton {
+        flex: 3;
+        font-size: 24px;
+        padding: 14px 18px;
+    }
+}
+  
+/* Laptops */
+@media (min-width: 769px) {
+    .register > .container > .wrapper-text {
+        margin-top: -250px;
+        width: 85%;
+    }
+    
+    .register > .container > .wrapper-text > h1 {
+        font-size: 2.5em;
+        width: 65%;
+        margin: auto;
+    }
+    
+    .register > .container > .wrapper-text > p {
+        font-size: 1.2em;
+    }
+    
+    .register > .container > .input {
+        width: 100%;
+        margin-top: 25px;
+    }
+    
+    .register > .container > .input > input {
+        flex: 7;
+        width: 80%;
+        padding: 26px 10px;
+    }
+    
+    .register > .container > .input > input::placeholder {
+        font-size: 18px;
+    }
+    
+    .register > .container > .input > .registerButton {
+        font-size: 21px;
+        padding: 12px 18px;
+    }
+}
+  
+/* Desktop */
+@media (min-width: 1200px) {
+    .register > .container > .wrapper-text {
+        margin-top: -200px;
+    }
+    
+    .register > .container > .wrapper-text > h1 {
+        font-size: 3.5em;
+    }
+    
+    .register > .container > .wrapper-text > p {
+        font-size: 1.2em;
+    }
+    
+    .register > .container > .input {
+        width: 55%;
+    }
+    
+    .register > .container > .input > input {
+        padding: 27px 10px;
+    }
+
+    .register > .container > .input > .registerButton {
+        font-size: 24px;
+        padding: 21px 18px;
+    }
+}
+
+/* Large monitors */
+@media (min-width: 1500px) {
+    .register > .container > .wrapper-text {
+        margin-top: -150px;
+        width: 70%;
+    }
+    
+    .register > .container > .wrapper-text > h1 {
+        font-size: 4em;
+    }
+    
+    .register > .container > .wrapper-text > p {
+        font-size: 1.5em;
+    }
+    
+    .register > .container > .input {
+        width: 45%;
+    }
+}
+  
+/* TVs */
+@media (min-width: 1900px) {
+    .register > .container > .wrapper-text {
+        width: 50%;
+    }
+    
+    .register > .container > .wrapper-text > h1 {
+        font-size: 4.5em;
+    }
+    
+    .register > .container > .wrapper-text > p {
+        font-size: 1.7em;
+    }
+    
+    .register > .container > .input {
+        width: 35%;
+    }
+}
