@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
@@ -31,19 +32,34 @@ function Navbar({ only_logo, profile_url }: Props) {
       <div className={isScrolled ? "scrolled" : "navbar"}>
         <div className="navbar-container">
           <img className="logo" src="assets/images/netflix.svg" />
-          <button className="button-tertiary button-tertiary-active">
-            Home
-          </button>
-          <button className="button-tertiary">Series</button>
-          <button className="button-tertiary">Films</button>
-          <button className="button-tertiary">Latest</button>
-          <button className="button-tertiary">My List</button>
+
+          <Link to="/" className="link">
+            <button className="button-tertiary button-tertiary-active">
+              Home
+            </button>
+          </Link>
+
+          <Link to="/series" className="link">
+            <button className="button-tertiary">Series</button>
+          </Link>
+
+          <Link to="/films" className="link">
+            <button className="button-tertiary">Films</button>
+          </Link>
+
+          <Link to="/latest" className="link">
+            <button className="button-tertiary">Latest</button>
+          </Link>
+
+          <Link to="/my-list" className="link">
+            <button className="button-tertiary">My List</button>
+          </Link>
 
           <div className="spacer"></div>
 
-          <SearchIcon className="icon"/>
-          <CardGiftIcon className="icon"/>
-          <NotificationsIcon className="icon"/>
+          <SearchIcon className="icon" />
+          <CardGiftIcon className="icon" />
+          <NotificationsIcon className="icon" />
           {profile_url && <img className="profile-image" src={profile_url} />}
           <div className="profile">
             <ArrowDropDownIcon className="icon" />
