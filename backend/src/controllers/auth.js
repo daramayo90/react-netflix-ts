@@ -30,6 +30,7 @@ const controller = {
             let checkPassword = bcrypt.compareSync(req.body.password, user.password);
             
             //Check password and remove the field before send the JSON information
+            //Generate an acess token with jwt.sign
             if (checkPassword) {
                 const accessToken = jwt.sign({
                     id: user.id, isAdmin: user.isAdmin },
