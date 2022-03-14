@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./Navbar.css";
@@ -43,19 +43,19 @@ function Navbar({ only_logo, profile_url }) {
             </button>
           </Link>
 
-          <Link to="/series" className="link">
+          <Link to="/series">
             <button className="button-tertiary">Series</button>
           </Link>
 
-          <Link to="/films" className="link">
+          <Link to="/films">
             <button className="button-tertiary">Films</button>
           </Link>
 
-          <Link to="/latest" className="link">
+          <Link to="/latest">
             <button className="button-tertiary">Latest</button>
           </Link>
 
-          <Link to="/my-list" className="link">
+          <Link to="/my-list">
             <button className="button-tertiary">My List</button>
           </Link>
 

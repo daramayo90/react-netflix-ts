@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { useState } from "react";
 
 import "./Landing.css";
 
@@ -20,35 +19,16 @@ function Landing({ type }: Props) {
   }
 
   return (
-    <Switch>
-      <div className="landing-container">
-        <Navbar only_logo={user === undefined} profile_url={user?.image_src} />
-        {user === undefined ? (
-          <Profiles onProfileClick={onProfileClick} />
-        ) : (
-          <>
-            <Route exact path="/">
-              <Browse />
-            </Route>
-            <Route path="/movies">
-              <Browse />
-            </Route>
-            <Route path="/series">
-              <Browse />
-            </Route>
-            <Route path="/films">
-              <Browse />
-            </Route>
-            <Route path="/latest">
-              <Browse />
-            </Route>
-            <Route path="/my-list">
-              <Browse />
-            </Route>
-          </>
-        )}
-      </div>
-    </Switch>
+    <div className="landing-container">
+      <Navbar only_logo={user === undefined} profile_url={user?.image_src} />
+      {user === undefined ? (
+        <Profiles onProfileClick={onProfileClick} />
+      ) : (
+        <>
+          <Browse />
+        </>
+      )}
+    </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from 'react-router-dom';
 import useAuth from "../../auth/useAuth";
 
 import "./Register.css";
@@ -10,7 +11,6 @@ import { useHistory } from "react-router-dom";
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
   const history = useHistory();
 
   const emailRef = useRef();
@@ -38,12 +38,10 @@ function Register() {
     <section className="register">
       <div className="top">
         <div className="wrapper">
-          <img
-            className="logo"
-            src="assets/images/netflix.svg"
-            alt=""
-          />
-          <button className="signInButton">Sign In</button>
+          <img className="logo" src="assets/images/netflix.svg" alt="" />
+          <Link to="/login">
+            <button className="signInButton">Sign In</button>
+          </Link>
         </div>
       </div>
       <div className="container">
@@ -63,9 +61,18 @@ function Register() {
           </div>
         ) : (
           <form className="input">
-            <input type="text" placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-            <button className="registerButton" onClick={ e=> { e.preventDefault(); register({email, username, password})} }>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button
+              className="registerButton"
+              onClick={(e) => {
+                e.preventDefault();
+                register({ email, password });
+              }}
+            >
               Start Membership <ArrowForwardIos className="icon" />
             </button>
           </form>

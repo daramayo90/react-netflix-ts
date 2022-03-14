@@ -7,7 +7,7 @@ const controller = {
     /* POST: User to register */
     register: async function (req, res) {
         const newUser = new User({
-            username: req.body.username,
+            username: "user",
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10)
         });
@@ -25,7 +25,7 @@ const controller = {
         try {
             const user = await User.findOne({ email: req.body.email });
 
-            !user && res.status(401).json("Wrong password or username");
+            !user && res.status(401).json("Wrong password or email");
 
             let checkPassword = bcrypt.compareSync(req.body.password, user.password);
             
@@ -41,7 +41,7 @@ const controller = {
 
                 res.status(200).json({...info, accessToken});
             } else {
-                res.status(401).json("Wrong password or username");
+                res.status(401).json("Wrong password or email");
             }
 
         } catch (error) {

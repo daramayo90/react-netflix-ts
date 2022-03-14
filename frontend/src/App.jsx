@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import "./App.css";
 import Landing from "./pages/landing/Landing";
 import NotFound404 from "./pages/notFound404/NotFound404.jsx";
@@ -12,10 +11,10 @@ import {
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import useAuth from "./auth/useAuth";
+import Browse from "./pages/browse/Browse";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
-  //const { user } = useContext(AuthContext);
-
   /**
    * Llamamos a los objetos/funciones que se encuentran en el contextValue
    * El contextValue es el valor enviado por el AuthProvider a todos los componentes hijos
@@ -34,8 +33,34 @@ function App() {
             {!user ? <Register /> : <Redirect to="/" />}
           </Route>
 
-          <Route path="/login">
-            {!user ? <Login /> : <Redirect to="/" />}
+          <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
+
+          <Route exact path="/">
+            <Browse />
+          </Route>
+
+          <Route path="/movies">
+            <Browse />
+          </Route>
+
+          <Route path="/series">
+            <Navbar />
+            <Browse />
+          </Route>
+
+          <Route path="/films">
+            <Navbar />
+            <Browse />
+          </Route>
+
+          <Route path="/latest">
+            <Navbar />
+            <Browse />
+          </Route>
+
+          <Route path="/my-list">
+            <Navbar />
+            <Browse />
           </Route>
 
           <Route path="*">
