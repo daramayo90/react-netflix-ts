@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./App.css";
 import Landing from "./pages/landing/Landing";
+import NotFound404 from "./pages/notFound404/NotFound404.jsx";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,10 +11,16 @@ import {
 
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
-import { AuthContext } from "./context/authContext/AuthContext";
+import useAuth from "./auth/useAuth";
 
 function App() {
-  const { user } = useContext(AuthContext);
+  //const { user } = useContext(AuthContext);
+
+  /**
+   * Llamamos a los objetos/funciones que se encuentran en el contextValue
+   * El contextValue es el valor enviado por el AuthProvider a todos los componentes hijos
+   */
+  const { user } = useAuth();
 
   return (
     <div className="App">
@@ -29,6 +36,10 @@ function App() {
 
           <Route path="/login">
             {!user ? <Login /> : <Redirect to="/" />}
+          </Route>
+
+          <Route path="*">
+            <NotFound404 />
           </Route>
         </Switch>
       </Router>

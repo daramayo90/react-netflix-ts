@@ -27,7 +27,7 @@ function Row({ title, fetchUrl }) {
 
   const handleClick = (direction) => {
     let distance = listRef.current.getBoundingClientRect().x - 50;
-    
+
     if (direction === "left" && slideNumber > 0) {
       setSlideNumber(slideNumber - 1);
       listRef.current.style.transform = `translateX(${350 + distance}px)`;
@@ -40,9 +40,7 @@ function Row({ title, fetchUrl }) {
 
   return (
     <div className="row">
-      <h4 className="title">
-        {title}
-      </h4>
+      <h4 className="title">{title}</h4>
 
       <div className="wrapper">
         <ArrowBackIosOutlined

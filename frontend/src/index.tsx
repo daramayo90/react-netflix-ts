@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { AuthContextProvider } from './context/authContext/AuthContext'
+import AuthProvider from './auth/AuthProvider';
 
+//AuthContextProvider
+//Es un componente que retorna a sus hijos el valor de un contexto,
+//es decir, un valor global para que lo puedan consumir
+//App es el {children} de AuthProvider
 ReactDOM.render(
   <React.StrictMode>
-    <AuthContextProvider>
+    <AuthProvider>
       <App />
-    </AuthContextProvider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

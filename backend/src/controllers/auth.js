@@ -15,8 +15,8 @@ const controller = {
         try {
             const user = await newUser.save();
             res.status(201).json(user);
-        } catch (err) {
-            res.status(500).json(err);
+        } catch (error) {
+            res.status(500).json(error);
         }
     },
 
@@ -44,8 +44,8 @@ const controller = {
                 res.status(401).json("Wrong password or username");
             }
 
-        } catch (err) {
-            res.status(500).json(err);
+        } catch (error) {
+            res.status(500).json(error);
         }
     }
 }
