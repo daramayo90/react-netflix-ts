@@ -7,27 +7,19 @@ import Navbar from "../../components/navbar/Navbar";
 import Profiles from "../../components/profiles/Profiles";
 import Browse from "../browse/Browse";
 
-interface Props {
-  type?: string;
-}
 
-function Landing({ type }: Props) {
+function Landing() {
   const [user, setUser] = useState<ProfileModel | undefined>(undefined);
 
   function onProfileClick(profile: ProfileModel) {
-    setUser((user) => profile);
+    setUser(profile);
+    localStorage.setItem('avatar', JSON.stringify(profile.image_src));
   }
 
   return (
     <div className="landing-container">
-      <Navbar only_logo={user === undefined} profile_url={user?.image_src} />
-      {user === undefined ? (
-        <Profiles onProfileClick={onProfileClick} />
-      ) : (
-        <>
-          <Browse />
-        </>
-      )}
+      <Navbar only_logo={!localStorage.getItem('avatar') || localStorage.getItem('avatar') === 'null'} profile_url={JSON.parse(localStorage.getItem('avatar') || '{}')} />
+      {!localStorage.getItem('avatar') || localStorage.getItem('avatar') === 'null' ? <Profiles onProfileClick={onProfileClick} /> : <Browse />}
     </div>
   );
 }

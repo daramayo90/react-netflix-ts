@@ -1,6 +1,5 @@
 import "./App.css";
-import Landing from "./pages/landing/Landing";
-import NotFound404 from "./pages/notFound404/NotFound404.jsx";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,11 +7,12 @@ import {
   Redirect,
 } from "react-router-dom";
 
+
+import useAuth from "./auth/useAuth";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
-import useAuth from "./auth/useAuth";
-import Browse from "./pages/browse/Browse";
-import Navbar from "./components/navbar/Navbar";
+import Landing from "./pages/landing/Landing";
+import NotFound404 from "./pages/notFound404/NotFound404.jsx";
 
 function App() {
   /**
@@ -33,34 +33,28 @@ function App() {
             {!user ? <Register /> : <Redirect to="/" />}
           </Route>
 
-          <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
-
-          <Route exact path="/">
-            <Browse />
+          <Route path="/login">
+            {!user ? <Login /> : <Redirect to="/" />}
           </Route>
 
           <Route path="/movies">
-            <Browse />
+            {user ? <Landing /> : <Redirect to="/login" />}
           </Route>
 
           <Route path="/series">
-            <Navbar />
-            <Browse />
+            {user ? <Landing /> : <Redirect to="/login" />}
           </Route>
 
           <Route path="/films">
-            <Navbar />
-            <Browse />
+            {user ? <Landing /> : <Redirect to="/login" />}
           </Route>
 
           <Route path="/latest">
-            <Navbar />
-            <Browse />
+            {user ? <Landing /> : <Redirect to="/login" />}
           </Route>
 
           <Route path="/my-list">
-            <Navbar />
-            <Browse />
+            {user ? <Landing /> : <Redirect to="/login" />}
           </Route>
 
           <Route path="*">

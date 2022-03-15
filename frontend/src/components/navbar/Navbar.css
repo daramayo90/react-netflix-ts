@@ -28,11 +28,43 @@
     height: 27px;
 }
 
-.navbar-container > .button-tertiary,
-.navbar-container > .icon,
-.navbar-container > .profile {
+.navbar-container > a > .button-tertiary,
+.navbar-container > .icon {
     display: none;
 }
+
+.navbar-container > .profile {
+    display: block;
+    position: relative;
+}
+
+.navbar-container > .icon {
+    display: none;
+}
+
+.navbar-container > .profile > .iconArrow {
+    margin: 0px 15px;
+    cursor: pointer;
+    color: #ffff;
+    font-size: 32px;
+}
+
+.navbar-container > .profile > .options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #0b0b0b;
+    z-index: 99;
+}
+
+.navbar-container > .profile > .options > span {
+    color: #ffff;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+}
+
 
 /* Tables */
 @media (min-width: 769px) and (orientation: landscape) {
@@ -61,13 +93,19 @@
     .navbar-container > .logo:hover {
         cursor: pointer;
     }
+
+    .navbar-container > a {
+        text-decoration: none;
+        outline: none;
+        cursor: default;
+    }
     
-    .navbar-container > .button-tertiary {
+    .navbar-container > a > .button-tertiary {
         display: block;
+        outline: none;
         background: none;
         color: rgb(230, 230, 230);
         border: none;
-        outline: none;
         font-family: inherit;
         font-size: 14px;
         font-weight: 400;
@@ -110,7 +148,7 @@
         display: block;
     }
     
-    .navbar-container > .profile > .icon {
+    .navbar-container > .profile > .iconArrow {
         margin: 0px 15px;
         cursor: pointer;
         color: #ffff;

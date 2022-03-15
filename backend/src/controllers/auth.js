@@ -7,7 +7,7 @@ const controller = {
     /* POST: User to register */
     register: async function (req, res) {
         const newUser = new User({
-            username: "user",
+            username: Math.random() * 100,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10)
         });
@@ -16,6 +16,7 @@ const controller = {
             const user = await newUser.save();
             res.status(201).json(user);
         } catch (error) {
+            console.log(error)
             res.status(500).json(error);
         }
     },

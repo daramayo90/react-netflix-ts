@@ -126,7 +126,7 @@
 /* Desktop */
 @media (min-width: 1200px) {
     .primary-button {
-        padding: 2px 3.7vw;
+        padding: 4px 3.2vw;
         font-size: 1.4rem;
     }
 
@@ -135,7 +135,7 @@
     }
 
     .secondary-button {
-        padding: 2px 3vh;
+        padding: 4px 3vh;
         font-size: 1.4rem;
     }
 }

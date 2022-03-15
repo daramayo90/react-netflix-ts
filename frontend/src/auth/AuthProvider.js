@@ -18,7 +18,7 @@ export default function AuthProvider({ children }) {
 
     //Save credentials in Local Storage
     useEffect(() => {
-        window.localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('user', JSON.stringify(user));
     }, [user]);
 
     //Cuando la función 'login' sea ejecutada, almacenará al usuario
@@ -44,7 +44,10 @@ export default function AuthProvider({ children }) {
     };
 
 
-    const logout = () => setUser(null);
+    const logout = () => {
+        setUser(null);
+        localStorage.setItem('avatar', null);
+    }
 
     //Información que se quiere transmitir a los componentes hijos
     //Todo debería estar memorizado

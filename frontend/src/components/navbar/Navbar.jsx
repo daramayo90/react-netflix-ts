@@ -13,6 +13,7 @@ import useAuth from "../../auth/useAuth";
 
 function Navbar({ only_logo, profile_url }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -64,14 +65,16 @@ function Navbar({ only_logo, profile_url }) {
           <SearchIcon className="icon" />
           <CardGiftIcon className="icon" />
           <NotificationsIcon className="icon" />
-          {profile_url && <img className="profile-image" src={profile_url} />}
+          {profile_url && <img className="profile-image" src={profile_url}  />}
           <div className="profile">
-            <ArrowDropDownIcon className="icon" />
+            <ArrowDropDownIcon className="iconArrow" onClick={() => setOpen(!open)} />
+            {console.log(open)}
+          {open && <>
             <div className="options">
               <span>Settings</span>
               <span onClick={() => logout()}>Logout</span>
+          </div> </>}
             </div>
-          </div>
         </div>
       </div>
     );
