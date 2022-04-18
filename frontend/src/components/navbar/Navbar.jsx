@@ -29,14 +29,14 @@ function Navbar({ only_logo, profile_url }) {
   if (only_logo) {
     return (
       <div className="navbar-container">
-        <img className="logo" src="assets/images/netflix.svg" />
+        <img className="logo" src="assets/images/netflix.svg" alt="Netflix Logo" />
       </div>
     );
   } else {
     return (
       <div className={isScrolled ? "scrolled" : "navbar"}>
         <div className="navbar-container">
-          <img className="logo" src="assets/images/netflix.svg" />
+          <img className="logo" src="assets/images/netflix.svg" alt="Netflix Logo"/>
 
           <Link to="/" className="link">
             <button className="button-tertiary button-tertiary-active">
@@ -65,7 +65,7 @@ function Navbar({ only_logo, profile_url }) {
           <SearchIcon className="icon" />
           <CardGiftIcon className="icon" />
           <NotificationsIcon className="icon" />
-          {profile_url && <img className="profile-image" src={profile_url}  />}
+          {profile_url && <img className="profile-image" src={profile_url}  alt="Netflix Profile Avatar"/>}
           <div className="profile">
             <ArrowDropDownIcon className="iconArrow" onClick={() => setOpen(!open)} />
             {console.log(open)}

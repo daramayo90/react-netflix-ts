@@ -1,36 +1,85 @@
-import React, { useState, useRef } from "react";
-import { Link } from 'react-router-dom';
-import useAuth from "../../auth/useAuth";
-
 import "./Register.css";
 
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+
 import { ArrowForwardIos } from "@material-ui/icons";
-import axios from "axios";
-import { useHistory } from "react-router-dom";
+
+import useAuth from "../../auth/useAuth";
+import validator from "validator";
 
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const history = useHistory();
-
+  const error = useRef();
   const emailRef = useRef();
 
-  const handleStart = () => {
-    setEmail(emailRef.current.value);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState(false);
+
+  const emailValidation = () => {
+    if (validator.isEmail(emailRef.current.value)) {
+      setEmail(emailRef.current.value);
+      error.current.innerText = "";
+      setErrors(false);
+    } else {
+      error.current.innerText = "Please, enter a valid email to continue";
+      setErrors(true);
+    }
   };
 
-  /*
-  const handleFinish = async (e) => {
+  const passwordValidation = (e) => {
     e.preventDefault();
-    setPassword(passwordRef.current.value);
-    setusername(usernameRef.current.value);
-    try {
-      await axios.post('auth/register', { email, username, password });
-      history.push('/login')
-    } catch (error) {
-      console.log(error);
+
+    const uppercaseRegExp = /(?=.*?[A-Z])/;
+    const lowercaseRegExp = /(?=.*?[a-z])/;
+    const digitsRegExp = /(?=.*?[0-9])/;
+    const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
+    const minLengthRegExp = /.{8,}/;
+
+    const passwordLength = password.length;
+    const uppercasePassword = uppercaseRegExp.test(password);
+    const lowercasePassword = lowercaseRegExp.test(password);
+    const digitsPassword = digitsRegExp.test(password);
+    const specialCharPassword = specialCharRegExp.test(password);
+    const minLengthPassword = minLengthRegExp.test(password);
+
+    if (passwordLength === 0) {
+      error.current.innerText = "Password is empty";
+      setErrors(true);
+      return;
     }
-  };*/
+    if (!uppercasePassword) {
+      error.current.innerText = "At least one Uppercase";
+      setErrors(true);
+      return;
+    }
+
+    if (!lowercasePassword) {
+      error.current.innerText = "At least one Lowercase";
+      setErrors(true);
+      return;
+    }
+
+    if (!digitsPassword) {
+      error.current.innerText = "At least one digit";
+      setErrors(true);
+      return;
+    }
+
+    if (!specialCharPassword) {
+      error.current.innerText = "At least one Special Characters";
+      setErrors(true);
+      return;
+    }
+
+    if (!minLengthPassword) {
+      error.current.innerText = "At least minumum 8 characters";
+      setErrors(true);
+      return;
+    }
+
+    register({ email, password });
+  };
 
   const { register } = useAuth();
 
@@ -53,12 +102,14 @@ function Register() {
           </p>
         </div>
         {!email ? (
-          <div className="input">
-            <input type="email" placeholder="Email address" ref={emailRef} />
-            <button className="registerButton" onClick={handleStart}>
-              Get Started <ArrowForwardIos className="icon" />
-            </button>
-          </div>
+          <>
+            <div className="input">
+              <input type="email" placeholder="Email address" ref={emailRef} />
+              <button className="registerButton" onClick={emailValidation}>
+                Get Started <ArrowForwardIos className="icon" />
+              </button>
+            </div>
+          </>
         ) : (
           <form className="input">
             <input
@@ -69,14 +120,14 @@ function Register() {
             <button
               className="registerButton"
               onClick={(e) => {
-                e.preventDefault();
-                register({ email, password });
+                passwordValidation(e);
               }}
             >
               Start Membership <ArrowForwardIos className="icon" />
             </button>
           </form>
         )}
+        {errors ? <span ref={error}></span> : <span ref={error}></span>}
       </div>
     </section>
   );
